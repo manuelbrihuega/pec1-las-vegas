@@ -1,27 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <link rel="stylesheet" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>Las Vegas</title>
   </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
+  <body class="pagina">
+    <include src="./views/header.html"></include>
+    <video class="pagina__video" autoplay muted loop>
+      <source src="../src/assets/videos/video.mp4" type="video/mp4">
+      <!--<source src="video.webm" type="video/webm">
+      <source src="video.ogv" type="video/ogg">-->
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+    <p class="eslogan pagina__eslogan">Vive Las Vegas: ¡Siente la emoción!</p>
+    <div class="card card--fondo-claro card--introductorio pagina__card" id="bienvenida">
+      <h2 class="card__titulo">Las Vegas, Estados Unidos</h2>
+      <p class="card__texto">¡Bienvenido a Las Vegas, la ciudad que nunca duerme y el destino definitivo para la diversión y la emoción! Conocida por sus luces deslumbrantes, hoteles icónicos y entretenimiento sin igual, Las Vegas es el lugar donde los sueños se hacen realidad. Desde los emocionantes casinos y los espectáculos de clase mundial hasta la exquisita gastronomía y las experiencias de compras de lujo, cada rincón de esta vibrante metrópoli ofrece algo único y emocionante. Sumérgete en la atmósfera única de la Strip, déjate llevar por el ritmo frenético de la vida nocturna y descubre por qué Las Vegas es la capital mundial del entretenimiento. ¡Prepárate para una aventura inolvidable en la ciudad que nunca decepciona!</p>
+    </div>
+    <div class="card card--fondo-claro pagina__card">
+      <h2 class="card__titulo">Sitios de interés</h2>
+      <div class="card card__card">
+        <img src="../src/assets/images/strip.jpg" alt="Panorámica general de la avenida Strip de las Vegas" class="card__imagen-fondo">
+        <h2 class="card__titulo">Las Vegas Strip</h2>
+        <p class="card__texto">La famosa "Strip" es la principal avenida de Las Vegas, conocida por sus brillantes luces, casinos, hoteles icónicos y espectáculos de clase mundial. Es el corazón de la vida nocturna y el entretenimiento de la ciudad, con lugares emblemáticos como el Bellagio, el Caesars Palace, el MGM Grand y el Venetian.</p>
+      </div>
     </div>
     <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+    <script src="./assets/scripts/main.js" type="module"></script><!-- do not remove this line! -->
   </body>
 </html>
+<!-- class id,name data-* src, for, type, href,value title,alt role,aria-* tabindex style-->

@@ -2,29 +2,120 @@
   box-sizing: border-box;
 }
 
-body {
+.pagina {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   margin: 0;
-  padding: 2rem;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  background-color: $negro;
+  scroll-behavior: smooth;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.pagina__video {
+  height: 100vh;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
 }
+
+.cabecera {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: transparent;
+  color: $blanco;
+  transition: all 0.40s linear;
+  z-index: 2;
+  height: 80px;
+
+  &:hover {
+    background-color: $blanco;
+    color: $negro;
+  }
+}
+
+.cabecera__titulo {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.menu__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu__elemento {
+  margin-left: 1.5rem;
+  text-transform: uppercase;
+}
+
+.menu__enlace {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.menu__icono {
+  margin-right: 0.5rem;
+}
+
+.eslogan {
+  color: $blanco;
+  z-index: 1;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 5rem;
+  font-size: 4rem;
+  position: absolute;
+  bottom: 0;
+  object-fit: cover;
+  margin-top: 0;
+  margin-bottom: 6rem;
+  border-bottom: 3px solid $blanco;
+  width: calc(100vw - 4rem);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 9rem;
+  padding-right: 9rem;
+}
+
+.card--introductorio {
+  margin-top: calc(100vh - 80px);
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  padding-left: 18rem;
+  padding-right: 18rem;
+  font-size: 25px;
+  line-height: 2.4rem;
+}
+
+.card--fondo-claro {
+  background-color: $blanco;
+}
+
+.card__texto {
+  color: $texto;
+}
+
+/*
 
 .uoc-logo {
   display: block;
@@ -43,7 +134,6 @@ body {
   font-family: $font-family-serif;
   font-size: 24px;
   font-weight: 700;
-  color: $uoc-corporate;
 
   @media (min-width: $mqMinWidth) {
     font-size: 36px;
@@ -55,3 +145,4 @@ body {
   font-size: 0.75rem;
   text-align: center;
 }
+*/

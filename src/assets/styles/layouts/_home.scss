@@ -41,6 +41,11 @@
     background-color: $blanco;
     color: $negro;
   }
+
+  @media (max-width: $tabletMaxWidth) {
+    background-color: $blanco;
+    color: $negro;
+  }
 }
 
 .cabecera__titulo {
@@ -54,32 +59,36 @@
   flex-direction: row;
 
   @media (max-width: $tabletMaxWidth) {
-    display: none; /* Oculta la lista de enlaces */
+    visibility: hidden;
     flex-direction: column;
+    color: $negro;
+    background-color: $blanco;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    z-index: 1;
+    right: 0;
+    top: 57px;
+    padding-left: 0px;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
-.menu__lista.active {
-  @media (max-width: $tabletMaxWidth) {
-    display: flex; /* Muestra la lista de enlaces cuando el menú está activo */
-  }
+.cabecera__toggle {
+  display: none;
 }
+
+.cabecera__toggle:checked + .cabecera__menu > .menu__lista {
+  visibility: visible;
+}
+
+
 
 .menu__elemento {
   margin-left: 1.5rem;
   text-transform: uppercase;
 
   @media (max-width: $tabletMaxWidth) {
-    margin-left: 0; /* Elimina el margen izquierdo entre elementos */
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -104,25 +113,9 @@
   @media (max-width: $tabletMaxWidth) {
     display: block;
     position: absolute;
-    top: 0.5rem;
+    top: 1.3rem;
     right: 0.5rem;
-    font-size: 1.5rem;
-  }
-}
-
-.cabecera__toggle {
-  display: none;
-}
-
-.cabecera__toggle:checked + .cabecera__hamburguesa {
-  @media (max-width: $tabletMaxWidth) {
-    display: none;
-  }
-}
-
-.cabecera__toggle:checked + .cabecera__hamburguesa + .menu__lista {
-  @media (max-width: $tabletMaxWidth) {
-    display: flex;
+    font-size: 3rem;
   }
 }
 
@@ -143,6 +136,15 @@
 
   @media (max-width: $medioMaxWidth) {
     font-size: 3.5rem;
+  }
+
+  @media (max-width: $tabletMaxWidth) {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  @media (max-width: $minimoMaxWidth) {
+    font-size: 2.2rem;
   }
 }
 
@@ -168,6 +170,11 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  @media (max-width: $minimoMaxWidth) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .card__icono {
@@ -184,6 +191,18 @@
   padding-bottom: 5rem;
   font-size: 25px;
   line-height: 2.4rem;
+
+  @media (max-width: $tabletMaxWidth) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (max-width: $movilMaxWidth) {
+    font-size: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    line-height: 2rem;
+  }
 }
 
 .card--fondo-claro {
@@ -207,6 +226,15 @@
   max-width: 100%;
   z-index: 1;
   border-radius: 20;
+
+  @media (max-width: $tabletMaxWidth) {
+    min-height: 300px;
+    object-fit: cover;
+  }
+
+  @media (max-width: $movilMaxWidth) {
+    min-height: 400px;
+  }
 }
 
 .card__texto {
@@ -224,6 +252,11 @@
   @media (max-width: $medioMaxWidth) {
     padding-top: 1rem;
   }
+
+  @media (max-width: $movilMaxWidth) {
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
 }
 
 .card__caja--no-flotante {
@@ -232,6 +265,10 @@
   grid-template-columns: 0.45fr 0.55fr; /* Dos columnas de tamaño automático */
   align-items: start;
   border-radius: 10px;
+
+  @media (max-width: $movilMaxWidth) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card__titulo--flotante {
@@ -253,13 +290,40 @@
   }
 }
 
+.card__titulo--no-flotante {
+  @media (max-width: $movilMaxWidth) {
+    margin-left: 1rem;
+  }
+}
+
 .card__texto--flotante {
   bottom: 20;
   color: $blanco;
+
+  @media (max-width: $minimoMaxWidth) {
+    line-height: 1rem;
+  }
+}
+
+.card__texto--no-flotante {
+  @media (max-width: $movilMaxWidth) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .card__columna {
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+
+  @media (max-width: $movilMaxWidth) {
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
 }
 
 .card__enlace {
@@ -273,6 +337,11 @@
   &:hover {
     color: $negro;
   }
+
+  @media (max-width: $movilMaxWidth) {
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .card__columna__imagen {
@@ -282,6 +351,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: $movilMaxWidth) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .card__texto--claro,
@@ -348,4 +422,6 @@
   font-size: 0.75rem;
   text-align: center;
 }
+
+FALTAN METER IMPORTACIONES Y FUNCIONES PARCIALES, ASÏ COMO PASAR VALIDADOR
 */
